@@ -1,0 +1,44 @@
+navigation:
+    - name: Home
+      url: /
+    - name: About
+      url: /about/
+
+title:       Ghost
+description: Thoughts, stories, ideas.
+url:         https://akhyarrh.github.io/casper-3-jekyll
+
+lang: en
+locale: en_US
+logo: "/logo.png"
+author: Ghost Foundation
+twitter:
+  username: tryghost
+  card: summary
+facebook: ghost
+
+permalink: /:title/
+
+show_drafts: false
+future:      false
+unpublished: false
+
+exclude:
+  - CNAME
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - vendor
+
+plugins:
+  - jekyll-seo-tag
+
+optional_front_matter:
+  remove_originals: true
+
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: true
+
+jekyll-mentions: https://twitter.com

@@ -1,0 +1,38 @@
+---
+layout: default
+body_class: page-template
+---
+<header class="site-header">
+    <div class="outer site-nav-main">
+        <div class="inner">
+            {% include site-nav.html %}
+        </div>
+    </div>
+</header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post {% unless page.image %}no-image{% endunless %}">
+
+            <header class="post-full-header">
+                <h1 class="post-full-title">{{page.title}}</h1>
+            </header>
+
+            {% if page.image %}
+            <figure class="post-full-image">
+                <img src="{{page.img}}" alt="{{page.title}}"/>
+            </figure>
+            {% endif %}
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    {{content}}
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+

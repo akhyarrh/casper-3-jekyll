@@ -1,0 +1,72 @@
+---
+layout: default
+body_class: post-template
+---
+<header class="site-header">
+    {% include site-header.html %}
+</header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post {% unless page.image %}no-image{% endunless %}">
+
+            <header class="post-full-header">
+
+                <h1 class="post-full-title">{{page.title}}</h1>
+
+                {% if page.custom_excerpt %}
+                <p class="post-full-custom-excerpt">{{page.custom_excerpt}}</p>
+                {% endif %}
+
+                <div class="post-full-byline">
+
+                    <section class="post-full-byline-content">
+                        <section class="post-full-byline-meta">
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date" datetime="{{page.date | date_to_xmlschema }}">{{ page.date | date:"%d-%m-%Y" }}</time>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            {% if page.image %}
+            <figure class="post-full-image">
+                <img src="{{page.image}}" alt="{{page.title}}" />
+            </figure>
+            {% endif %}
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    {{content}}
+                </div>
+            </section>
+
+            <section class="post-full-comments">
+               <!-- If you want to embed comments, this is a good place to do it! -->
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+
+            {% if page.next %}
+                {% include next-card.html %}
+            {% endif %}
+
+            {% if page.previous %}
+                {% include previous-card.html %}
+            {% endif %}
+        </div>
+    </div>
+</aside>

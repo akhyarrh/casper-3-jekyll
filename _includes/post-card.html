@@ -1,0 +1,34 @@
+<article class="post-card post {% unless post.image %}no-image{% endunless %}">
+
+    {% if post.image %}
+    <a class="post-card-image-link" href="{{post.url}}">
+        <img class="post-card-image"
+            loading="lazy"
+            src="{{post.image}}"
+            alt="{{post.title}}"
+        />
+    </a>
+    {% endif %}
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="{{post.url}}">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">{{post.date | date: "%d-%m-%Y"}}</div>
+                <h2 class="post-card-title">{{post.title}}</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                {% if post.image %}
+                    <p>{{post.content | strip_html | strip | truncatewords: 30 }}</p>
+                {% else %}
+                    <p>{{post.content | strip_html | strip | truncatewords: 44 }}</p>
+                {% endif %}
+            </section>
+        </a>
+
+
+    </div>
+
+</article>

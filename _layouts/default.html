@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
+    <link rel="preload" href="/assets/built/global.css" as="style">
+    <link rel="preload" href="/assets/built/screen.css" as="style">
+    <link rel="preload" href="/assets/jquery-3.4.1.min.js" as="script">
+    <link rel="preload" href="/assets/built/casper.js" as="script">
+
+    <link rel="stylesheet" href="/assets/built/global.css">
+    <link rel="stylesheet" href="/assets/built/screen.css">
+
+    {% include head.html %}
+
+</head>
+<body class="{{ body_class }}">
+
+    <div class="site-wrapper">
+
+        {{ content }}
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="{{site.url}}">{{site.title}}</a> &copy; {{ site.time | date: "%Y"}}</section>
+                <nav class="site-footer-nav">
+                    <a href="{{site.baseurl}}">Latest Posts</a>
+                    {% if site.facebook %}<a href="https://facebook.com/{{site.facebook}}" target="_blank" rel="noopener">Facebook</a>{% endif %}
+                    {% if site.twitter %}<a href="https://twitter.com/{{site.twitter.username}}" target="_blank" rel="noopener">Twitter</a>{% endif %}
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <script async defer src="/assets/jquery-3.4.1.min.js"></script>
+    <script async defer src="/assets/built/casper.js"></script>
+
+    {% if page.layout == page %}
+        {% include page-script.html %}
+    {% elsif page.layout == post %}
+        {% include post-script.html %}
+    {% endif %}
+</body>
+</html>
