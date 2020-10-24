@@ -7,7 +7,8 @@ navigation:
 
 title:       Ghost
 description: Thoughts, stories, ideas.
-url:         https://akhyarrh.github.io/casper-3-jekyll
+url:         https://akhyarrh.github.io
+baseurl:     /casper-3-jekyll
 
 lang: en
 locale: en_US

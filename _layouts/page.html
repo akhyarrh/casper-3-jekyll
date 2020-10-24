@@ -21,7 +21,7 @@ body_class: page-template
 
             {% if page.image %}
             <figure class="post-full-image">
-                <img src="{{page.img}}" alt="{{page.title}}"/>
+                <img src="{{ site.baseurl }}{{page.img}}" alt="{{page.title}}"/>
             </figure>
             {% endif %}
 

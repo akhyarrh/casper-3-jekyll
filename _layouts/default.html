@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
-    <link rel="preload" href="/assets/built/global.css" as="style">
-    <link rel="preload" href="/assets/built/screen.css" as="style">
-    <link rel="preload" href="/assets/jquery-3.4.1.min.js" as="script">
-    <link rel="preload" href="/assets/built/casper.js" as="script">
+    <link rel="preload" href="{{ site.baseurl }}/assets/built/global.css" as="style">
+    <link rel="preload" href="{{ site.baseurl }}/assets/built/screen.css" as="style">
+    <link rel="preload" href="{{ site.baseurl }}/assets/jquery-3.4.1.min.js" as="script">
+    <link rel="preload" href="{{ site.baseurl }}/assets/built/casper.js" as="script">
 
-    <link rel="stylesheet" href="/assets/built/global.css">
-    <link rel="stylesheet" href="/assets/built/screen.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/built/global.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/built/screen.css">
 
     {% include head.html %}
 
@@ -26,7 +26,7 @@
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{site.url}}">{{site.title}}</a> &copy; {{ site.time | date: "%Y"}}</section>
+                <section class="copyright"><a href="{{site.url}}{{ site.baseurl }}">{{site.title}}</a> &copy; {{ site.time | date: "%Y"}}</section>
                 <nav class="site-footer-nav">
                     <a href="{{site.baseurl}}">Latest Posts</a>
                     {% if site.facebook %}<a href="https://facebook.com/{{site.facebook}}" target="_blank" rel="noopener">Facebook</a>{% endif %}
@@ -38,8 +38,8 @@
 
     </div>
 
-    <script async defer src="/assets/jquery-3.4.1.min.js"></script>
-    <script async defer src="/assets/built/casper.js"></script>
+    <script async defer src="{{ site.baseurl }}/assets/jquery-3.4.1.min.js"></script>
+    <script async defer src="{{ site.baseurl }}/assets/built/casper.js"></script>
 
     {% if page.layout == page %}
         {% include page-script.html %}

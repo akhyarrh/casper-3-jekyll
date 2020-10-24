@@ -1,10 +1,10 @@
 <article class="post-card post {% unless post.image %}no-image{% endunless %}">
 
     {% if post.image %}
-    <a class="post-card-image-link" href="{{post.url}}">
+    <a class="post-card-image-link" href="{{ site.baseurl }}{{post.url}}">
         <img class="post-card-image"
             loading="lazy"
-            src="{{post.image}}"
+            src="{{ site.baseurl }}{{post.image}}"
             alt="{{post.title}}"
         />
     </a>
